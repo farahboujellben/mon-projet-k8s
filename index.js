@@ -1,0 +1,16 @@
+const express = require('express');
+const app = express();
+
+const articles = [
+  { _id: "1", reference: "123456", designation: "Ecrn 10", prix: 170, marque: "ASUS" },
+  { _id: "2", reference: "FR244433", designation: "Cosmétique Femmes", prix: 250, marque: "marque1" },
+  { _id: "3", reference: "ABC999", designation: "Nouveau Produit", prix: 99, marque: "TestMarque" }
+];
+
+app.get('/api/articles', (req, res) => {
+  res.json(articles);
+});
+
+app.listen(3001, () => {
+  console.log('Serveur démarré sur le port 3001');
+});
